@@ -1,0 +1,3 @@
+#!/bin/bash
+echo 'create-jdbc-connection-pool --datasourceclassname com.mysql.cj.jdbc.MysqlDataSource --restype javax.sql.DataSource --property User=$MYSQL_USER:Port=$MYSQL_PORT:Password=$MYSQL_PASSWORD:ServerName=$MYSQL_HOST:DatabaseName=$MYSQL_DATABASE:useSSL=false:allowPublicKeyRetrieval=true mysqlpool' >> $POSTBOOT_COMMANDS
+echo 'create-jdbc-resource --connectionpoolid mysqlpool $JDBC_RESOURCE_NAME' >> $POSTBOOT_COMMANDS
